@@ -1,1 +1,1 @@
-My readme 0x05-pointers_arrays_strings
+My readme pointers arrays string
