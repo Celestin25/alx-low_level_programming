@@ -1,62 +1,68 @@
 #include "main.h"
 /**
- *_strlen - count arrray
+ *_strlen - count array
  *@s: array of elements
- *Return: i
+ *Return: 1
  */
 
 int _strlen(char *s)
 {
-	unsigned int i;
+unsigned int i;
 
-	i = 0;
-	while (s[i] != '\0') /*Count character of string*/
-	{
-		i++;
-	}
+i = 0;
+while (s[i] != '\0') /*count character of string*/
+{
+i++;
+}
 
-	return (i);
+return (i);
 }
 
 /**
- *str_concat - back a pointer to array
- *@s1: Array one
- *@s2: Array two
- *Return: Always an array dinamic
+ *_strcpy - copy arrays
+ *@src: array of elements
+ *@dest: dest array
+ *Return: dest
  */
 
-char *str_concat(char *s1, char *s2)
+char *_strcpy(char *dest, char *src)
 {
-	char *dst;
-	unsigned int i, j, size;
+int i = 0;
 
-	/*If the array is empty*/
-	if (s1 == NULL)
-		s1 = "";
+while (src[i] != '\0')
+{
+dest[i] = src[i];
+i++;
+}
+dest[i] = '\0';
 
-	if (s2 == NULL)
-		s2 = "";
+return (dest);
+}
 
-	/*count size total*/
-	size = (_strlen(s1) + _strlen(s2) + 1);
+/**
+ *_strdup - array for prints a string
+ *@str: array of elements
+ *Return: pointer
+ */
 
-	/*malloc*/
-	dst = (char *) malloc(size * sizeof(char));
+char *_strdup(char *str)
+{
+char *dst;
+unsigned int size;
 
-	if (dst == 0)
-	{
-		return (NULL);
-	}
+if (str == 0)
+{
+return (NULL);
+}
 
-	/*Concatenate arrays*/
-	for (i = 0; *(s1 + i) != '\0'; i++)
-		*(dst + i) = *(s1 + i);
+size = _strlen(str) + 1;
 
-	for (j = 0; *(s2 + j) != '\0'; j++)
-	{
-		*(dst + i) = *(s2 + j);
-		i++;
-	}
+dst = (char *) malloc(size *sizeof(char));
 
-	return (dst);
+if (dst == 0)
+{
+return (NULL);
+}
+_strcpy(dst, str);
+return (dst);
 }
