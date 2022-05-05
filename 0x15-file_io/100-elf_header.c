@@ -139,7 +139,7 @@ void print_data(char *ptr)
  * print_magic - prints magic info.
  * @ptr: magic.
  * Return: no return.
-[O */
+ */
 void print_magic(char *ptr)
 {
 	int bytes;
